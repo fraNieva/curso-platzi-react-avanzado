@@ -15,6 +15,7 @@ const fadeInKeyFrames = keyframes`
     opacity: 1;
   }
 `
+
 export const rotate = () => css`
   animation: 1.5s ${rotateFrames} linear infinite;
 `
