@@ -1,7 +1,7 @@
 import React from 'react'
 import { ListOfCategories } from './components/ListOfCategories'
 import { GlobalStyle } from './styles/GlobalStyle'
-import { ListOfPhotoCards } from './components/ListOfPhotoCards'
+import { ListOfPhotoCards } from './containers/ListOfPhotoCards'
 import { Logo } from './components/Logo'
 import { AppWrapper } from './styles'
 
