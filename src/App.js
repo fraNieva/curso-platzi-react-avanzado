@@ -3,12 +3,13 @@ import { ListOfCategories } from './components/ListOfCategories'
 import { GlobalStyle } from './styles/GlobalStyle'
 import { ListOfPhotoCards } from './components/ListOfPhotoCards'
 import { Logo } from './components/Logo'
+import { AppWrapper } from './styles'
 
 export const App = () => (
-  <div>
+  <AppWrapper>
     <GlobalStyle />
     <Logo />
     <ListOfCategories />
-    <ListOfPhotoCards />
-  </div>
+    <ListOfPhotoCards categoryId={2} />
+  </AppWrapper>
 )
