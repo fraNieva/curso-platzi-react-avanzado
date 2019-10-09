@@ -14,13 +14,15 @@ export const App = () => {
     <AppWrapper>
       <GlobalStyle />
       <Logo />
-      {detailId ? <PhotoCardWithQuery id={detailId} /> : (
-        <>
-          <ListOfCategories />
-          <ListOfPhotoCards categoryId={2} />
-        </>
-      )}
-      
+      {detailId
+        ? <PhotoCardWithQuery id={detailId} />
+        : (
+          <>
+            <ListOfCategories />
+            <ListOfPhotoCards categoryId={2} />
+          </>
+        )}
+
     </AppWrapper>
   )
 }
