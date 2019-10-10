@@ -1,15 +1,19 @@
 import React from 'react'
 import { PhotoCard } from '../components/PhotoCard'
-import { getPhoto } from '../hocs/getPhoto'
+import { GET_PHOTO } from '../hocs/getPhoto'
+import { Loading } from '../components/Loading'
 // permite utilizar renderProps
 import { Query } from 'react-apollo'
 
+const renderProp = ({ loading, error, data }) => {
+  if (loading) return <Loading />
+  if (error) return <p>error</p>
+  const { photo = {} } = data
+  return <PhotoCard {...photo} />
+}
+
 export const PhotoCardWithQuery = ({ id }) => (
-  <Query query={getPhoto} variables={{ id }}>
-    {({ loading, error, data }) => {
-      if (loading) return null
-      const { photo = {} } = data
-      return <PhotoCard {...photo} />
-    }}
+  <Query query={GET_PHOTO} variables={{ id }}>
+    {renderProp}
   </Query>
 )
