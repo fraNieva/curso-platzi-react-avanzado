@@ -9,10 +9,7 @@ import { NotRegisteredUser } from './pages/NotRegisteredUser'
 import { Logo } from './components/Logo'
 import { Navbar } from './components/Navbar'
 import { AppWrapper } from './styles'
-
-const UserLogged = ({ children }) => {
-  return children({ isAuth: true })
-}
+import Context from './Context'
 
 export const App = () => {
   return (
@@ -24,7 +21,7 @@ export const App = () => {
         <Home path='/pet/:id' />
         <Detail path='/detail/:detailId' />
       </Router>
-      <UserLogged>
+      <Context.Consumer>
         {
           ({ isAuth }) =>
             isAuth
@@ -40,7 +37,7 @@ export const App = () => {
                 </Router>
               )
         }
-      </UserLogged>
+      </Context.Consumer>
       <Navbar />
     </AppWrapper>
   )
