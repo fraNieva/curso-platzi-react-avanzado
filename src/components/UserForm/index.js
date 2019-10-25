@@ -1,15 +1,19 @@
 import React from 'react'
+import { Form, Input, Button, Title } from './styles'
 import { inputValues } from '../../hooks/inputValue'
 
-export const UserForm = ({ onSubmit }) => {
+export const UserForm = ({ onSubmit, title }) => {
   const email = inputValues('')
   const password = inputValues('')
 
   return (
-    <form onSubmit={onSubmit}>
-      <input placeholder='Email' {...email} />
-      <input placeholder='Password' type='password' {...password} />
-      <button>Autorizar</button>
-    </form>
+    <>
+      <Title>{title}</Title>
+      <Form onSubmit={onSubmit}>
+        <Input placeholder='Email' {...email} />
+        <Input placeholder='Password' type='password' {...password} />
+        <Button>{title}</Button>
+      </Form>
+    </>
   )
 }
